@@ -1,11 +1,12 @@
 {
   "name": "travlr",
   "version": "1.0.0",
-  "description":"Travlr Getaways",
-  "author":"SNHU Richard Chang <richard.chang@snhu.edu>",
+  "description": "Travlr Getaways",
+  "author": "SNHU Richard Chang <richard.chang@snhu.edu>",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -13,6 +14,8 @@
     "express": "~4.16.1",
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "mongoose": "^5.9.2",
+    "morgan": "~1.9.1",
+    "seedgoose": "^2.0.2"
   }
 }
