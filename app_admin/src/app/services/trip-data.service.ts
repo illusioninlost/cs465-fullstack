@@ -24,7 +24,7 @@ export class TripDataService {
       this.http
         .post(this.tripUrl, formData)
         .toPromise()
-        // .then(response => response.json() as Trip[])
+        .then(response => response.json() as Trip)
         .catch(this.handleError)
     );
   }
@@ -55,6 +55,15 @@ export class TripDataService {
       .toPromise()
       .then((response) => response.json() as Trip[])
       .catch(this.handleError);
+  }
+
+  public deleteTrip(tripCode: string): Promise<Trip> {
+    console.log("Inside TripDataService#deleteTrip");
+    return this.http
+    .delete(this.tripUrl + tripCode)
+    .toPromise()
+    .then((response) => response.json() as Trip[])
+    .catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {

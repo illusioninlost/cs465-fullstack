@@ -26,7 +26,7 @@ export class EditTripComponent implements OnInit {
       this.router.navigate([""]);
       return;
     }
-    
+
     console.log("EditTripComponent#onInit found tripCode " + tripCode);
     // initialize form
     this.editForm = this.formBuilder.group({
@@ -40,7 +40,11 @@ export class EditTripComponent implements OnInit {
       image: ["", Validators.required],
       description: ["", Validators.required],
     });
-    console.log("EditTripComponent#onInit calling TripDataService#getTrip('" + tripCode +"')");
+    console.log(
+      "EditTripComponent#onInit calling TripDataService#getTrip('" +
+        tripCode +
+        "')"
+    );
     this.tripService.getTrip(tripCode).then((data) => {
       console.log(data);
       // Don't use editForm.setValue() as it will throw console error
