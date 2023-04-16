@@ -22,6 +22,8 @@ export class DeleteTripComponent implements OnInit {
     }
 
     console.log("DeleteTripComponent#onInit found tripCode " + tripCode);
+    //let token =localStorage.getItem("token");
+    //console.log("token is " + token);
     if (window.confirm("Are sure you want to delete this item ?")) {
       //put your delete method logic here
       this.tripService.deleteTrip(tripCode).then((data) => {
