@@ -24,7 +24,7 @@ export class TripDataService {
       this.http
         .post(this.tripUrl, formData)
         .toPromise()
-        .then(response => response.json() as Trip)
+        //.then(response => response.json() as Trip[])
         .catch(this.handleError)
     );
   }
